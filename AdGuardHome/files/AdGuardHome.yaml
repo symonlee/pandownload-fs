@@ -3,14 +3,17 @@ bind_port: 3000
 beta_bind_port: 0
 users:
 - name: root
-  password: $2a$10$WWIWOjh382pSnY2Bo35GTOVW1llN3FkNoxe61ux0IdmGYGbNLmC.u
+  password: $2a$10$AC71BB4i9ucenuYveH6T.OBlEkjZRAw3SlXPsoaptO49aQxeR8kHq
+auth_attempts: 5
+block_auth_min: 15
 http_proxy: ""
 language: ""
 rlimit_nofile: 0
 debug_pprof: false
 web_session_ttl: 720
 dns:
-  bind_host: 0.0.0.0
+  bind_hosts:
+  - 0.0.0.0
   port: 6054
   statistics_interval: 1
   querylog_enabled: true
@@ -65,7 +68,9 @@ dns:
   cache_time: 30
   rewrites: []
   blocked_services: []
-  customresolver: null
+  local_domain_name: lan
+  resolve_clients: false
+  local_ptr_upstreams: []
 tls:
   enabled: false
   server_name: ""
@@ -120,4 +125,4 @@ log_max_size: 100
 log_max_age: 3
 log_file: ""
 verbose: false
-schema_version: 7
+schema_version: 10
