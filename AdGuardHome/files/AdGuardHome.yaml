@@ -8,7 +8,6 @@ auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""
 language: ""
-rlimit_nofile: 0
 debug_pprof: false
 web_session_ttl: 720
 dns:
@@ -68,10 +67,11 @@ dns:
   cache_time: 30
   rewrites: []
   blocked_services: []
+  upstream_timeout: 10s
   local_domain_name: lan
   resolve_clients: false
-  local_ptr_upstreams:
-  - 192.168.1.1
+  use_private_ptr_resolvers: false
+  local_ptr_upstreams: []
 tls:
   enabled: false
   server_name: ""
@@ -126,5 +126,8 @@ log_max_size: 100
 log_max_age: 3
 log_file: ""
 verbose: false
-schema_version: 10
-
+os:
+  group: ""
+  user: ""
+  rlimit_nofile: 0
+schema_version: 11
