@@ -70,7 +70,8 @@ dns:
   blocked_services: []
   local_domain_name: lan
   resolve_clients: false
-  local_ptr_upstreams: []
+  local_ptr_upstreams:
+  - 192.168.1.1
 tls:
   enabled: false
   server_name: ""
@@ -126,3 +127,4 @@ log_max_age: 3
 log_file: ""
 verbose: false
 schema_version: 10
+
